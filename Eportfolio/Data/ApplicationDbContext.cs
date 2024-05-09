@@ -6,9 +6,12 @@ namespace Eportfolio.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions options) : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options)
         {
         }
+
         public DbSet<Post> Posts { get; set; }
+        public DbSet<MyMusic> MyMusic { get; set; }
     }
 }

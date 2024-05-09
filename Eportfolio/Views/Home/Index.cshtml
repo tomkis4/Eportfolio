@@ -3,6 +3,18 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <header>
+        <h1>Welcome to My ePortfolio!</h1>
+        <p>Here you can find my latest projects, achievements, and experiences. Feel free to browse through and get to know me better.</p>
+    </header>
+    <p>Here you can check my latest thoughts, news, and get to know what I've been doing:</p>
+    <div>
+        <a asp-controller="Posts" asp-action="Index" class="btn btn-primary">Visit Blog</a>
+    </div>
+    <p>Here you can check out the music I've made:</p>
+    <div style="margin-top: 20px;">
+        <a asp-controller="MyMusic" asp-action="Index" class="btn btn-primary">Check Out My Music</a>
+    </div>
 </div>
+
+

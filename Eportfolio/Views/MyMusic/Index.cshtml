@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Eportfolio.Models.MyMusic>
+
+@{
+    ViewData["Title"] = "My Music";
+}
+
+<h1>My Music</h1>
+
+<p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a asp-action="Create">Create New</a>
+    }
+</p>
+
+<div class="music-container">
+    @foreach (var item in Model)
+    {
+        <div class="music-item">
+            <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+            <p>@Html.DisplayFor(modelItem => item.Description)</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="@item.YouTubeLink" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p>Release Date: @Html.DisplayFor(modelItem => item.ReleaseDate)</p>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="music-actions">
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </div>
+            }
+        </div>
+    }
+</div>

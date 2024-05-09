@@ -1,47 +1,65 @@
 ﻿@model IEnumerable<Eportfolio.Models.Post>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Welcome to My Music ePortfolio Blog!<p>Explore my musical journey and discoveries.";
 }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="~/css/posts.css">
+    <style>
+        /* Dodatkowe style dla prezentacji postów jako kart */
+        .post-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .post-card h2 {
+            margin-top: 0;
+        }
+
+        .post-card p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Content)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedAt)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
 }
-    </tbody>
-</table>
+
+<div class="post-container">
+    @foreach (var item in Model)
+    {
+        <div class="post-card">
+            <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+            <p>@Html.DisplayFor(modelItem => item.Content)</p>
+            <p>@Html.DisplayFor(modelItem => item.CreatedAt)</p>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </p>
+            }
+        </div>
+    }
+</div>
+
+</body>
+</html>
+
+

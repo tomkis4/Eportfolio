@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using Eportfolio.Data;
 using Eportfolio.Models;
 
 namespace Eportfolio.Controllers
 {
+    [Authorize]
     public class PostsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,6 +19,7 @@ namespace Eportfolio.Controllers
         }
 
         // GET: Posts
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Posts.ToListAsync());
@@ -33,8 +33,7 @@ namespace Eportfolio.Controllers
                 return NotFound();
             }
 
-            var post = await _context.Posts
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var post = await _context.Posts.FirstOrDefaultAsync(m => m.Id == id);
             if (post == null)
             {
                 return NotFound();
@@ -50,8 +49,6 @@ namespace Eportfolio.Controllers
         }
 
         // POST: Posts/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Content,CreatedAt")] Post post)
@@ -82,8 +79,6 @@ namespace Eportfolio.Controllers
         }
 
         // POST: Posts/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Content,CreatedAt")] Post post)
@@ -124,8 +119,7 @@ namespace Eportfolio.Controllers
                 return NotFound();
             }
 
-            var post = await _context.Posts
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var post = await _context.Posts.FirstOrDefaultAsync(m => m.Id == id);
             if (post == null)
             {
                 return NotFound();
@@ -155,3 +149,4 @@ namespace Eportfolio.Controllers
         }
     }
 }
+

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lnz/EHSUrkU2zZoUlgWidAUP0IZHiMHeXGC+CSysLCvwy43iPgx6DokhgDKx+97c7S1vC5KZ/k0BGRjGbQ3VpA==",
+  "dgSpecHash": "znXsbfWy5LoRSN+LV3LOlA6oZZHsslKBndFP5KgEYoRQ/kX7eQW2GeBOP6/v9hSwW8RaUdOk7BbiahK5YRoYOg==",
   "success": true,
-  "projectFilePath": "C:\\Eportfolio\\Eportfolio\\Eportfolio.csproj",
+  "projectFilePath": "C:\\Elearning\\Eportfolio\\Eportfolio\\Eportfolio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Debrzno\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Debrzno\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
