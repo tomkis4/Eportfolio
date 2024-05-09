@@ -3,8 +3,10 @@
     "",
     "\\Eportfolio",
     "\\Eportfolio\\Controllers",
-    "\\Eportfolio\\Migrations"
+    "\\Eportfolio\\Migrations",
+    "\\Eportfolio\\Views",
+    "\\Eportfolio\\Views\\Shared"
   ],
-  "SelectedNode": "\\Eportfolio\\Controllers\\PostsController.cs",
+  "SelectedNode": "\\Eportfolio\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }

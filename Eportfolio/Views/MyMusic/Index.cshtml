@@ -1,11 +1,16 @@
 ﻿@model IEnumerable<Eportfolio.Models.MyMusic>
 
 @{
-    ViewData["Title"] = "My Music";
+    ViewData["Title"] = "MyMusic";
 }
 
 <h1>My Music</h1>
-
+<p>
+    Explore my musical creations and immerse yourself in a world of melodies, rhythms, and emotions.
+    From captivating beats to soulful compositions, discover the essence of my musical journey.
+Let the music speak to your soul and take you on a unique auditory adventure. 
+Dive in and experience the magic of sound!
+</p>
 <p>
     @if (User.Identity.IsAuthenticated)
     {
