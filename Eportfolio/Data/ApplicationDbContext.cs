@@ -13,5 +13,6 @@ namespace Eportfolio.Data
 
         public DbSet<Post> Posts { get; set; }
         public DbSet<MyMusic> MyMusic { get; set; }
+        public DbSet<Contact> Contact { get; set; }
     }
 }

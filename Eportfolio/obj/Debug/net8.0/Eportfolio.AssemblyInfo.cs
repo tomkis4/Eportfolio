@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Eportfolio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d76cdd93b099a5f0571c68313a1e8e594bb25463")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c7e1d8420223dbe5ccc9d7a38e8b44a2e11d5d0d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Eportfolio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Eportfolio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
