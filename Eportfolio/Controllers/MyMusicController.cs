@@ -20,7 +20,8 @@ namespace Eportfolio.Controllers
         // GET: MyMusics
         public async Task<IActionResult> Index()
         {
-            return View(await _context.MyMusic.ToListAsync());
+            var myMusicList = await _context.MyMusic.ToListAsync();
+            return View(myMusicList);
         }
 
         // GET: MyMusics/Details/5
@@ -154,3 +155,5 @@ namespace Eportfolio.Controllers
         }
     }
 }
+
+

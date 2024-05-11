@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<Eportfolio.Models.MyMusic>
 
 @{
-    ViewData["Title"] = "MyMusic";
+    ViewData["Title"] = "My Music";
 }
 
 <h1>My Music</h1>
 <p>
     Explore my musical creations and immerse yourself in a world of melodies, rhythms, and emotions.
     From captivating beats to soulful compositions, discover the essence of my musical journey.
-Let the music speak to your soul and take you on a unique auditory adventure. 
-Dive in and experience the magic of sound!
+    Let the music speak to your soul and take you on a unique auditory adventure.
+    Dive in and experience the magic of sound!
 </p>
 <p>
     @if (User.Identity.IsAuthenticated)
@@ -25,17 +25,49 @@ Dive in and experience the magic of sound!
             <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
             <p>@Html.DisplayFor(modelItem => item.Description)</p>
             <div class="video-container">
-                <iframe width="560" height="315" src="@item.YouTubeLink" frameborder="0" allowfullscreen></iframe>
+                @if (!string.IsNullOrEmpty(item.YouTubeLink))
+                {
+                    <iframe width="560" height="315" src="@GetEmbeddedYouTubeUrl(item.YouTubeLink)" frameborder="0" allowfullscreen></iframe>
+                }
+                else
+                {
+                    <p>No video available</p>
+                }
             </div>
             <p>Release Date: @Html.DisplayFor(modelItem => item.ReleaseDate)</p>
             @if (User.Identity.IsAuthenticated)
             {
                 <div class="music-actions">
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </div>
             }
         </div>
     }
 </div>
+
+@section Scripts {
+    <script>
+        // Pozostała część skryptu
+    </script>
+}
+
+@functions {
+    public string GetEmbeddedYouTubeUrl(string url)
+    {
+        if (url.Contains("youtube.com"))
+        {
+            var videoId = System.Web.HttpUtility.ParseQueryString(new System.Uri(url).Query).Get("v");
+            return $"https://www.youtube.com/embed/{videoId}";
+        }
+        else if (url.Contains("youtu.be"))
+        {
+            var videoId = new System.Uri(url).Segments.Last();
+            return $"https://www.youtube.com/embed/{videoId}";
+        }
+        else
+        {
+            return ""; // Jeśli link nie jest linkiem do YouTube, zwróć pustą wartość
+        }
+    }
+}
