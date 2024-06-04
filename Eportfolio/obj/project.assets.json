@@ -8863,25 +8863,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Debrzno\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\jhero\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Elearning\\Eportfolio\\Eportfolio\\Eportfolio.csproj",
+      "projectUniqueName": "C:\\Users\\jhero\\OneDrive\\Pulpit\\jereczekv3\\Eportfolio\\Eportfolio\\Eportfolio.csproj",
       "projectName": "Eportfolio",
-      "projectPath": "C:\\Elearning\\Eportfolio\\Eportfolio\\Eportfolio.csproj",
-      "packagesPath": "C:\\Users\\Debrzno\\.nuget\\packages\\",
-      "outputPath": "C:\\Elearning\\Eportfolio\\Eportfolio\\obj\\",
+      "projectPath": "C:\\Users\\jhero\\OneDrive\\Pulpit\\jereczekv3\\Eportfolio\\Eportfolio\\Eportfolio.csproj",
+      "packagesPath": "C:\\Users\\jhero\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jhero\\OneDrive\\Pulpit\\jereczekv3\\Eportfolio\\Eportfolio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Debrzno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jhero\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -8900,6 +8903,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -8960,7 +8968,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

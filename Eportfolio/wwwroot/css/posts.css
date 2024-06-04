@@ -1,4 +1,8 @@
-﻿.blog-posts {
+﻿/* posts.css */
+
+
+
+.blog-posts {
     margin-top: 20px;
 }
 
@@ -40,3 +44,4 @@
     .post-actions a.delete-link {
         color: #dc3545;
     }
+

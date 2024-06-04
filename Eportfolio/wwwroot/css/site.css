@@ -1,22 +1,71 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    width: calc(33% - 40px); /* adjust the width to fit three boxes per row */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Ensure all boxes have the same height */
+.box p {
+    flex-grow: 1;
+
+}
+
+.text-center {
+    margin-bottom: 50px; /* add margin at the bottom to avoid overlapping with the footer */
+}
+
+/* Styl dla obrazu */
+.box img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Button colors */
+.btn-blue {
+    background-color: blue;
+    border-color: blue;
+}
+
+.btn-green {
+    background-color: green;
+    border-color: green;
+}
+
+.btn-yellow {
+    background-color: darkgoldenrod;
+    border-color: darkgoldenrod;
 }
